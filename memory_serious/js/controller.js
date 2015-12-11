@@ -91,8 +91,8 @@ var controller = {
         var $youLoseTable = $("#youLoseTable");
         var $youWinTable = $("#youWinTable");
         
-        model.fault = 5;
-        model.time = 60;
+        model.fault = 15;
+        model.time = 300;
         model.pairCouter = cards.length;
         
         $youLoseTable.hide();
