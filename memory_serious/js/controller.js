@@ -42,6 +42,10 @@ var controller = {
         return model.score;
     } ,
     
+    getNumberOfCard : function(){
+        return cards.length();
+    } ,
+    
     round : function(num){
         var ret;
         if(jQuery.isEmptyObject(model.currentCard)){

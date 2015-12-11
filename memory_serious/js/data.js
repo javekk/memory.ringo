@@ -38,7 +38,7 @@ var cards = [
     {
         number : 10 ,
         src : "img/img-10.png"
-    } ,
+    } 
         
 ];
     

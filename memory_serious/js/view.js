@@ -32,8 +32,8 @@ var view = {
         var order = controller.getOrder();  
         for(var i = 0; i < order.length; i++){ 
             var obj = controller.getCardFromNum(order[i]);
-            if(i % 5 == 0){
-                $("#table").append(   '<div class="col col-xs-2 col-md-2 col-xs-offset-1 col-md-offset-1">'  
+            if(i % 10 == 0){
+                $("#table").append(   '<div class="col col-xs-1 col-md-1 col-xs-offset-1 col-md-offset-1">'  
                                     +   '<a class="thumbnail">' 
                                     +       '<img src="' + obj.src + '" class="under">'
                                     +       '<img src="img/filler.png" class="over">'
@@ -42,7 +42,7 @@ var view = {
                 
             }
             else{
-                $("#table").append(   '<div class="col col-xs-2 col-md-2">' 
+                $("#table").append(   '<div class="col col-xs-1 col-md-1">' 
                                     +   '<a class="thumbnail">' 
                                     +       '<img src="' + obj.src + '" class="under">'
                                     +       '<img src="img/filler.png" class="over">'

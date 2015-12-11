@@ -53,7 +53,7 @@ var model = {
         }
         
         while(series1.size != 0 || series2.size != 0){
-            ran = parseInt((Math.random() * 5)+1);
+            ran = parseInt((Math.random() * numberOfCards)+1);
             if(series1.has(ran)){
                 orderArray.push(ran);
                 series1.delete(ran);
