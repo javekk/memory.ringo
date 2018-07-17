@@ -7,7 +7,7 @@ var model = {
     
     time: 60 ,
     
-    pairCouter: 10 ,
+    pairCouter:  10,
     
     score: 0 ,
     
