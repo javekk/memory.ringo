@@ -1,51 +1,51 @@
 /*===============CONTROLLER==============*/
 var controller = {
-    
+
     init : function() {
         model.init();
         view.init();
     } ,
-    
+
     getCard : function(src){
         return model.getCard(src);
     } ,
-    
+
     getCardFromNum : function(num){
         return model.getCardFromNum(num);
     } ,
-    
+
     getAllCards : function(){
         return model.getAllCards();
     } ,
-    
+
     getOrder : function(){
-       return model.getNewOrder(); 
-    } , 
-    
+       return model.getNewOrder();
+    } ,
+
     getCurrentCard : function(){
         return model.currentCard;
     } ,
-    
+
     setCurrentCard : function(card){
         model.currentCard = card;
     } ,
-    
+
     setPairCounter : function(){
-        model.pairCouter = model.pairCouter -1;    
+        model.pairCouter = model.pairCouter -1;
     } ,
-    
+
     getPairCounter : function(){
         return model.pairCouter;
     } ,
-    
+
     getScore : function(){
         return model.score;
     } ,
-    
+
     getNumberOfCard : function(){
         return cards.length();
     } ,
-    
+
     round : function(num){
         var ret;
         if(jQuery.isEmptyObject(model.currentCard)){
@@ -58,35 +58,35 @@ var controller = {
         }
         return ret;
     } ,
-    
+
     getFault: function(){
         return model.fault;
     } ,
-    
+
     isWin : function(){
         if(model.pairCouter <= 0){
             var $timer = $("#timer");
             var $fault = $("#fault");
-            
-            model.score = parseInt($timer.text()) + (parseInt($fault.text()) * 4);   
+
+            model.score = parseInt($timer.text()) + (parseInt($fault.text()) * 4);
             $timer.text(0);
             view.youWin();
         }
     } ,
-    
+
     faultFound : function(){
         var $faults = $("#fault");
-        
+
         model.fault = model.fault - 1;
-        
-        $faults.text(model.fault +" attemps left");
+
+        $faults.text(model.fault +" attempts left");
         if(model.fault <=0){
             $("#timer").text(0);
             view.youLose("to many error....");
         }
 
     } ,
-    
+
     game : function(){
         var $timer = $("#timer");
         var $timerPar = $("#timerPar");
@@ -94,27 +94,27 @@ var controller = {
         var $faultsPar = $("#faultPar");
         var $youLoseTable = $("#youLoseTable");
         var $youWinTable = $("#youWinTable");
-        
-        model.fault = 15;
+
+        model.fault = 20;
         model.time = 300;
         model.pairCouter = cards.length;
-        
+
         $youLoseTable.hide();
         $youWinTable.hide();
         view.displayCards();
 
         $timer.text(model.time);
-        $faults.text( model.fault + " attemps left");
+        $faults.text( model.fault + " attempts left");
         $timerPar.show();
         $faultsPar.show();
-           
-        view.timer();    
+
+        view.timer();
     } ,
-    
+
     saveScore : function(name, score){
         model.saveScore(name, score);
     } ,
-    
+
     loadScore : function(){
         return model.loadScore();
     } ,
